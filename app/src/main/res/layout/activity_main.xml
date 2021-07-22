@@ -104,6 +104,7 @@
 		android:layout_width="0dp"
 		android:layout_height="wrap_content"
 		android:text="@string/_clear"
+		android:onClick="buttonClick"
 		android:textSize="@dimen/button_text_size"
 		app:layout_constraintBottom_toTopOf="@+id/guideline_clear_bottom"
 		app:layout_constraintEnd_toStartOf="@+id/guideline_actions_right"
