@@ -7,6 +7,23 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
+/*
+<androidx.appcompat.widget.AppCompatImageView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:background="@drawable/bg"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.0"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintVertical_bias="0.0" />
+*
+*
+* */
+
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
     TextView display;
