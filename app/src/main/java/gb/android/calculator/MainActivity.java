@@ -5,14 +5,16 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
-    TextView display;
+    private TextView   display;
+    private Calculator calculator;
+    private String     KEY_CALCULATOR = "calc";
 
-    Calculator calculator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -28,6 +30,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         display.setText(calculator.getDisplay());
     }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle instanceState) {
+        super.onSaveInstanceState(instanceState);
+        instanceState.putParcelable(KEY_CALCULATOR, calculator);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle instanceState) {
+        super.onRestoreInstanceState(instanceState);
+        calculator = instanceState.getParcelable(KEY_CALCULATOR);
+        display.setText(calculator.getDisplay());
+    }
+
 
     private void setOnClickListeners()
     {
@@ -52,7 +68,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.buttonMultiply).setOnClickListener(this);
         findViewById(R.id.buttonDivide).setOnClickListener(this);
     }
-
 
     @Override
     public void onClick(View v)

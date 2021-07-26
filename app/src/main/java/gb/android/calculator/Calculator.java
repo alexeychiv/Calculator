@@ -1,6 +1,9 @@
 package gb.android.calculator;
 
-public class Calculator {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Calculator implements Parcelable {
 
     private int     displaySize = 15;
     private String  display;
@@ -43,6 +46,52 @@ public class Calculator {
     {
         clear();
     }
+
+    //====================================================================================================================
+    //  PARCELABLE
+
+    protected Calculator(Parcel in) {
+        displaySize    = in.readInt();
+        display        = in.readString();
+        isDot          = in.readByte() != 0;
+        isNumber1Long  = in.readByte() != 0;
+        isNumber2Long  = in.readByte() != 0;
+        number1_long   = in.readLong();
+        number2_long   = in.readLong();
+        number1_double = in.readDouble();
+        number2_double = in.readDouble();
+    }
+
+    public static final Creator<Calculator> CREATOR = new Creator<Calculator>() {
+        @Override
+        public Calculator createFromParcel(Parcel in) {
+            return new Calculator(in);
+        }
+
+        @Override
+        public Calculator[] newArray(int size) {
+            return new Calculator[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(displaySize);
+        dest.writeString(display);
+        dest.writeByte((byte) (isDot ? 1 : 0));
+        dest.writeByte((byte) (isNumber1Long ? 1 : 0));
+        dest.writeByte((byte) (isNumber2Long ? 1 : 0));
+        dest.writeLong(number1_long);
+        dest.writeLong(number2_long);
+        dest.writeDouble(number1_double);
+        dest.writeDouble(number2_double);
+    }
+
 
     //====================================================================================================================
     //  UTILS
@@ -126,7 +175,6 @@ public class Calculator {
             }
         }
     }
-
 
     //====================================================================================================================
     //  INTERFACE
