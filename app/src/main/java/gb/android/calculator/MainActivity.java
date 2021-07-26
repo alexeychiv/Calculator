@@ -8,26 +8,11 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-/*
-<androidx.appcompat.widget.AppCompatImageView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:background="@drawable/bg"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.0"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent"
-		app:layout_constraintVertical_bias="0.0" />
-*
-*
-* */
-
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
     TextView display;
 
+    Calculator calculator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -37,45 +22,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         display = (TextView) findViewById(R.id.display);
 
-        Button buttonClear   = findViewById(R.id.buttonClear);
+        setOnClickListeners();
 
-        Button buttonOne        = findViewById(R.id.buttonOne);
-        Button buttonTwo        = findViewById(R.id.buttonTwo);
-        Button buttonThree      = findViewById(R.id.buttonThree);
-        Button buttonFour       = findViewById(R.id.buttonFour);
-        Button buttonFive       = findViewById(R.id.buttonFive);
-        Button buttonSix        = findViewById(R.id.buttonSix);
-        Button buttonSeven      = findViewById(R.id.buttonSeven);
-        Button buttonEight      = findViewById(R.id.buttonEight);
-        Button buttonNine       = findViewById(R.id.buttonNine);
-        Button buttonZero       = findViewById(R.id.buttonZero);
+        calculator = new Calculator();
 
-        Button buttonDot        = findViewById(R.id.buttonDot);
-        Button buttonEquals     = findViewById(R.id.buttonEquals);
-
-        Button buttonPlus       = findViewById(R.id.buttonPlus);
-        Button buttonMinus      = findViewById(R.id.buttonMinus);
-        Button buttonMultiply   = findViewById(R.id.buttonMultiply);
-        Button buttonDivide     = findViewById(R.id.buttonDivide);
-
-        buttonClear.setOnClickListener(this);
-        buttonOne.setOnClickListener(this);
-        buttonTwo.setOnClickListener(this);
-        buttonThree.setOnClickListener(this);
-        buttonFour.setOnClickListener(this);
-        buttonFive.setOnClickListener(this);
-        buttonSix.setOnClickListener(this);
-        buttonSeven.setOnClickListener(this);
-        buttonEight.setOnClickListener(this);
-        buttonNine.setOnClickListener(this);
-        buttonZero.setOnClickListener(this);
-        buttonDot.setOnClickListener(this);
-        buttonEquals.setOnClickListener(this);
-        buttonPlus.setOnClickListener(this);
-        buttonMinus.setOnClickListener(this);
-        buttonMultiply.setOnClickListener(this);
-        buttonDivide.setOnClickListener(this);
+        display.setText(calculator.getDisplay());
     }
+
+    private void setOnClickListeners()
+    {
+        findViewById(R.id.buttonClear).setOnClickListener(this);
+
+        findViewById(R.id.buttonOne).setOnClickListener(this);
+        findViewById(R.id.buttonTwo).setOnClickListener(this);
+        findViewById(R.id.buttonThree).setOnClickListener(this);
+        findViewById(R.id.buttonFour).setOnClickListener(this);
+        findViewById(R.id.buttonFive).setOnClickListener(this);
+        findViewById(R.id.buttonSix).setOnClickListener(this);
+        findViewById(R.id.buttonSeven).setOnClickListener(this);
+        findViewById(R.id.buttonEight).setOnClickListener(this);
+        findViewById(R.id.buttonNine).setOnClickListener(this);
+        findViewById(R.id.buttonZero).setOnClickListener(this);
+
+        findViewById(R.id.buttonDot).setOnClickListener(this);
+        findViewById(R.id.buttonEquals).setOnClickListener(this);
+
+        findViewById(R.id.buttonPlus).setOnClickListener(this);
+        findViewById(R.id.buttonMinus).setOnClickListener(this);
+        findViewById(R.id.buttonMultiply).setOnClickListener(this);
+        findViewById(R.id.buttonDivide).setOnClickListener(this);
+    }
+
 
     @Override
     public void onClick(View v)
@@ -85,72 +62,72 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId())
         {
             case R.id.buttonClear:
-                b = findViewById(R.id.buttonClear);
-                display.setText(b.getText());
+                calculator.clear();
+                display.setText(calculator.getDisplay());
                 break;
             case R.id.buttonOne:
-                b = findViewById(R.id.buttonOne);
-                display.setText(b.getText());
+                calculator.addDigit('1');
+                display.setText(calculator.getDisplay());
                 break;
             case R.id.buttonTwo:
-                b = findViewById(R.id.buttonTwo);
-                display.setText(b.getText());
+                calculator.addDigit('2');
+                display.setText(calculator.getDisplay());
                 break;
             case R.id.buttonThree:
-                b = findViewById(R.id.buttonThree);
-                display.setText(b.getText());
+                calculator.addDigit('3');
+                display.setText(calculator.getDisplay());
                 break;
             case R.id.buttonFour:
-                b = findViewById(R.id.buttonFour);
-                display.setText(b.getText());
+                calculator.addDigit('4');
+                display.setText(calculator.getDisplay());
                 break;
             case R.id.buttonFive:
-                b = findViewById(R.id.buttonFive);
-                display.setText(b.getText());
+                calculator.addDigit('5');
+                display.setText(calculator.getDisplay());
                 break;
             case R.id.buttonSix:
-                b = findViewById(R.id.buttonSix);
-                display.setText(b.getText());
+                calculator.addDigit('6');
+                display.setText(calculator.getDisplay());
                 break;
             case R.id.buttonSeven:
-                b = findViewById(R.id.buttonSeven);
-                display.setText(b.getText());
+                calculator.addDigit('7');
+                display.setText(calculator.getDisplay());
                 break;
             case R.id.buttonEight:
-                b = findViewById(R.id.buttonEight);
-                display.setText(b.getText());
+                calculator.addDigit('8');
+                display.setText(calculator.getDisplay());
                 break;
             case R.id.buttonNine:
-                b = findViewById(R.id.buttonNine);
-                display.setText(b.getText());
+                calculator.addDigit('9');
+                display.setText(calculator.getDisplay());
                 break;
             case R.id.buttonZero:
-                b = findViewById(R.id.buttonZero);
-                display.setText(b.getText());
+                calculator.addDigit('0');
+                display.setText(calculator.getDisplay());
                 break;
             case R.id.buttonDot:
-                b = findViewById(R.id.buttonDot);
-                display.setText(b.getText());
+                calculator.addDot();
+                display.setText(calculator.getDisplay());
                 break;
             case R.id.buttonEquals:
-                b = findViewById(R.id.buttonEquals);
-                display.setText(b.getText());
+                calculator.actionEquals();
+                display.setText(calculator.getDisplay());
                 break;
             case R.id.buttonPlus:
-                b = findViewById(R.id.buttonPlus);
-                display.setText(b.getText());
+                calculator.setAction(Calculator.Action.PLUS);
+                display.setText(calculator.getDisplay());
                 break;
             case R.id.buttonMinus:
-                b = findViewById(R.id.buttonMinus);
-                display.setText(b.getText());
+                calculator.setAction(Calculator.Action.MINUS);
+                display.setText(calculator.getDisplay());
                 break;
             case R.id.buttonMultiply:
-                b = findViewById(R.id.buttonMultiply);
-                display.setText(b.getText());
+                calculator.setAction(Calculator.Action.MULTIPLY);
+                display.setText(calculator.getDisplay());
                 break;
             case R.id.buttonDivide:
-                b = findViewById(R.id.buttonDivide);
-                display.setText(b.getText());
+                calculator.setAction(Calculator.Action.DIVIDE);
+                display.setText(calculator.getDisplay());
                 break;
         }
     }
