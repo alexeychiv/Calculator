@@ -114,7 +114,7 @@ public class Calculator implements Parcelable {
 
     private void calculate()
     {
-        if (isNumber2Long && isNumber2Long)
+        if (isNumber1Long && isNumber2Long)
         {
             switch (action)
             {
@@ -179,6 +179,7 @@ public class Calculator implements Parcelable {
     //====================================================================================================================
     //  INTERFACE
 
+
     public String getDisplay() { return display; }
 
     public void clear()
@@ -218,8 +219,8 @@ public class Calculator implements Parcelable {
 
                 if (isNumber1Long && isDot)
                 {
-                    display += ".";
-                    isNumber1Long = false;
+                    display       += ".";
+                    isNumber1Long  = false;
                 }
 
                 display += digit;
@@ -229,9 +230,15 @@ public class Calculator implements Parcelable {
 
             case ACTION:
             {
-                state   = State.NUMBER2;
-                isDot   = false;
-                display = Character.toString(digit);
+                state = State.NUMBER2;
+
+                if (isNumber2Long && isDot)
+                {
+                    isNumber2Long = false;
+                    display       = "0." + digit;
+                }
+                else
+                    display = Character.toString(digit);
 
                 return;
             }
@@ -286,7 +293,6 @@ public class Calculator implements Parcelable {
 
             case ACTION:
             {
-                state = State.NUMBER2;
                 isDot = true;
 
                 return;
@@ -300,6 +306,7 @@ public class Calculator implements Parcelable {
         {
             case ACTION:
                 this.action = action;
+                isDot       = false;
             case INIT:
             case EQUALS:
             {
