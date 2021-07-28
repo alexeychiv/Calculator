@@ -6,4 +6,6 @@
 	<dimen name="min_text_size">6sp</dimen>
 	<dimen name="max_text_size">100sp</dimen>
 	<dimen name="text_size_granularity">2sp</dimen>
+	<dimen name="button_inset_left">7dp</dimen>
+	<dimen name="button_inset_right">7dp</dimen>
 </resources>

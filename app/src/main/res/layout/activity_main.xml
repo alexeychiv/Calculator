@@ -103,10 +103,12 @@
 		app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_top"
 		tools:text="66666666666666666" />
 	
-	<androidx.appcompat.widget.AppCompatButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/buttonClear"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
+		android:insetLeft="@dimen/button_inset_left"
+		android:insetRight="@dimen/button_inset_right"
 		android:text="@string/_clear"
 		android:textSize="@dimen/button_text_size"
 		app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_c_bottom"
@@ -115,10 +117,12 @@
 		app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_c_top"
 		app:layout_constraintVertical_bias="0.0" />
 	
-	<androidx.appcompat.widget.AppCompatButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/buttonEquals"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
+		android:insetLeft="@dimen/button_inset_left"
+		android:insetRight="@dimen/button_inset_right"
 		android:text="@string/_equals"
 		android:textSize="@dimen/button_text_size"
 		app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_bottom"
@@ -126,10 +130,12 @@
 		app:layout_constraintStart_toEndOf="@+id/buttonDot"
 		app:layout_constraintTop_toBottomOf="@+id/buttonNine" />
 	
-	<androidx.appcompat.widget.AppCompatButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/buttonEight"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
+		android:insetLeft="@dimen/button_inset_left"
+		android:insetRight="@dimen/button_inset_right"
 		android:text="@string/_8"
 		android:textSize="@dimen/button_text_size"
 		app:layout_constraintBottom_toTopOf="@+id/buttonDot"
@@ -137,10 +143,12 @@
 		app:layout_constraintStart_toEndOf="@+id/buttonSeven"
 		app:layout_constraintTop_toBottomOf="@+id/buttonFive" />
 	
-	<androidx.appcompat.widget.AppCompatButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/buttonMultiply"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
+		android:insetLeft="@dimen/button_inset_left"
+		android:insetRight="@dimen/button_inset_right"
 		android:text="@string/_multiply"
 		android:textSize="@dimen/button_text_size"
 		app:layout_constraintBottom_toTopOf="@+id/buttonDivide"
@@ -149,10 +157,12 @@
 		app:layout_constraintTop_toBottomOf="@+id/buttonMinus"
 		tools:layout_editor_absoluteX="296dp" />
 	
-	<androidx.appcompat.widget.AppCompatButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/buttonDot"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
+		android:insetLeft="@dimen/button_inset_left"
+		android:insetRight="@dimen/button_inset_right"
 		android:text="@string/_dot"
 		android:textSize="@dimen/button_text_size"
 		app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_bottom"
@@ -160,10 +170,12 @@
 		app:layout_constraintStart_toEndOf="@+id/buttonZero"
 		app:layout_constraintTop_toBottomOf="@+id/buttonEight" />
 	
-	<androidx.appcompat.widget.AppCompatButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/buttonOne"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
+		android:insetLeft="@dimen/button_inset_left"
+		android:insetRight="@dimen/button_inset_right"
 		android:text="@string/_1"
 		android:textSize="@dimen/button_text_size"
 		app:layout_constraintBottom_toTopOf="@+id/buttonFour"
@@ -171,10 +183,12 @@
 		app:layout_constraintStart_toStartOf="@+id/guideline_start"
 		app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_buttons_top" />
 	
-	<androidx.appcompat.widget.AppCompatButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/buttonTwo"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
+		android:insetLeft="@dimen/button_inset_left"
+		android:insetRight="@dimen/button_inset_right"
 		android:text="@string/_2"
 		android:textSize="@dimen/button_text_size"
 		app:layout_constraintBottom_toTopOf="@+id/buttonFive"
@@ -182,10 +196,12 @@
 		app:layout_constraintStart_toEndOf="@+id/buttonOne"
 		app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_buttons_top" />
 	
-	<androidx.appcompat.widget.AppCompatButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/buttonFour"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
+		android:insetLeft="@dimen/button_inset_left"
+		android:insetRight="@dimen/button_inset_right"
 		android:text="@string/_4"
 		android:textSize="@dimen/button_text_size"
 		app:layout_constraintBottom_toTopOf="@+id/buttonSeven"
@@ -193,10 +209,12 @@
 		app:layout_constraintStart_toStartOf="@+id/guideline_start"
 		app:layout_constraintTop_toBottomOf="@+id/buttonOne" />
 	
-	<androidx.appcompat.widget.AppCompatButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/buttonZero"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
+		android:insetLeft="@dimen/button_inset_left"
+		android:insetRight="@dimen/button_inset_right"
 		android:text="@string/_0"
 		android:textSize="@dimen/button_text_size"
 		app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_bottom"
@@ -204,10 +222,12 @@
 		app:layout_constraintStart_toStartOf="@+id/guideline_start"
 		app:layout_constraintTop_toBottomOf="@+id/buttonSeven" />
 	
-	<androidx.appcompat.widget.AppCompatButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/buttonFive"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
+		android:insetLeft="@dimen/button_inset_left"
+		android:insetRight="@dimen/button_inset_right"
 		android:text="@string/_5"
 		android:textSize="@dimen/button_text_size"
 		app:layout_constraintBottom_toTopOf="@+id/buttonEight"
@@ -215,10 +235,12 @@
 		app:layout_constraintStart_toEndOf="@+id/buttonFour"
 		app:layout_constraintTop_toBottomOf="@+id/buttonTwo" />
 	
-	<androidx.appcompat.widget.AppCompatButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/buttonSix"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
+		android:insetLeft="@dimen/button_inset_left"
+		android:insetRight="@dimen/button_inset_right"
 		android:text="@string/_6"
 		android:textSize="@dimen/button_text_size"
 		app:layout_constraintBottom_toTopOf="@+id/buttonNine"
@@ -226,10 +248,12 @@
 		app:layout_constraintStart_toEndOf="@+id/buttonFive"
 		app:layout_constraintTop_toBottomOf="@+id/buttonThree" />
 	
-	<androidx.appcompat.widget.AppCompatButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/buttonDivide"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
+		android:insetLeft="@dimen/button_inset_left"
+		android:insetRight="@dimen/button_inset_right"
 		android:text="@string/_divide"
 		android:textSize="@dimen/button_text_size"
 		app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_bottom"
@@ -238,10 +262,12 @@
 		app:layout_constraintTop_toBottomOf="@+id/buttonMultiply"
 		tools:layout_editor_absoluteX="296dp" />
 	
-	<androidx.appcompat.widget.AppCompatButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/buttonMinus"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
+		android:insetLeft="@dimen/button_inset_left"
+		android:insetRight="@dimen/button_inset_right"
 		android:text="@string/_minus"
 		android:textSize="@dimen/button_text_size"
 		app:layout_constraintBottom_toTopOf="@+id/buttonMultiply"
@@ -250,10 +276,12 @@
 		app:layout_constraintTop_toBottomOf="@+id/buttonPlus"
 		tools:layout_editor_absoluteX="296dp" />
 	
-	<androidx.appcompat.widget.AppCompatButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/buttonNine"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
+		android:insetLeft="@dimen/button_inset_left"
+		android:insetRight="@dimen/button_inset_right"
 		android:text="@string/_9"
 		android:textSize="@dimen/button_text_size"
 		app:layout_constraintBottom_toTopOf="@+id/buttonEquals"
@@ -261,10 +289,12 @@
 		app:layout_constraintStart_toEndOf="@+id/buttonEight"
 		app:layout_constraintTop_toBottomOf="@+id/buttonSix" />
 	
-	<androidx.appcompat.widget.AppCompatButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/buttonSeven"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
+		android:insetLeft="@dimen/button_inset_left"
+		android:insetRight="@dimen/button_inset_right"
 		android:text="@string/_7"
 		android:textSize="@dimen/button_text_size"
 		app:layout_constraintBottom_toTopOf="@+id/buttonZero"
@@ -272,10 +302,12 @@
 		app:layout_constraintStart_toStartOf="@+id/guideline_start"
 		app:layout_constraintTop_toBottomOf="@+id/buttonFour" />
 	
-	<androidx.appcompat.widget.AppCompatButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/buttonThree"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
+		android:insetLeft="@dimen/button_inset_left"
+		android:insetRight="@dimen/button_inset_right"
 		android:text="@string/_3"
 		android:textSize="@dimen/button_text_size"
 		app:layout_constraintBottom_toTopOf="@+id/buttonSix"
@@ -283,10 +315,12 @@
 		app:layout_constraintStart_toEndOf="@+id/buttonTwo"
 		app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_buttons_top" />
 	
-	<androidx.appcompat.widget.AppCompatButton
+	<com.google.android.material.button.MaterialButton
 		android:id="@+id/buttonPlus"
 		android:layout_width="0dp"
 		android:layout_height="0dp"
+		android:insetLeft="@dimen/button_inset_left"
+		android:insetRight="@dimen/button_inset_right"
 		android:text="@string/_plus"
 		android:textSize="@dimen/button_text_size"
 		app:layout_constraintBottom_toTopOf="@+id/buttonMinus"
