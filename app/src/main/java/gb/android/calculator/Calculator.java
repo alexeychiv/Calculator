@@ -73,9 +73,7 @@ public class Calculator implements Parcelable {
     };
 
     @Override
-    public int describeContents() {
-        return 0;
-    }
+    public int describeContents() { return 0; }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
@@ -228,8 +226,6 @@ public class Calculator implements Parcelable {
                 }
 
                 display += digit;
-
-                return;
             }
         }
     }
@@ -262,8 +258,6 @@ public class Calculator implements Parcelable {
 
             case ACTION: {
                 isDot = true;
-
-                return;
             }
         }
     }
@@ -324,8 +318,6 @@ public class Calculator implements Parcelable {
                     display = Long.toString(number1_long);
                 else
                     display = Double.toString(number1_double);
-
-                return;
             }
         }
     }

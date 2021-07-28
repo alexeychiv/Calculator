@@ -25,35 +25,35 @@
 		app:layout_constraintGuide_percent="0.1" />
 	
 	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/guideline_horizonal_display_bottom"
+		android:id="@+id/guideline_horizontal_display_bottom"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
 		app:layout_constraintGuide_percent="0.2" />
 	
 	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/guideline_horizonal_c_bottom"
+		android:id="@+id/guideline_horizontal_c_bottom"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
 		app:layout_constraintGuide_percent="0.32" />
 	
 	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/guideline_horizonal_buttons_top"
+		android:id="@+id/guideline_horizontal_buttons_top"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
 		app:layout_constraintGuide_percent="0.34" />
 	
 	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/guideline_horizonal_c_top"
+		android:id="@+id/guideline_horizontal_c_top"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
 		app:layout_constraintGuide_percent="0.22" />
 	
 	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/guideline_horizonal_bottom"
+		android:id="@+id/guideline_horizontal_bottom"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
@@ -97,7 +97,7 @@
 		android:gravity="end"
 		android:padding="@dimen/display_padding"
 		android:textSize="@dimen/display_text_size"
-		app:layout_constraintBottom_toTopOf="@+id/guideline_horizonal_display_bottom"
+		app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_display_bottom"
 		app:layout_constraintEnd_toStartOf="@+id/guideline_end"
 		app:layout_constraintStart_toStartOf="@+id/guideline_start"
 		app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_top"
@@ -109,10 +109,10 @@
 		android:layout_height="0dp"
 		android:text="@string/_clear"
 		android:textSize="@dimen/button_text_size"
-		app:layout_constraintBottom_toTopOf="@+id/guideline_horizonal_c_bottom"
+		app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_c_bottom"
 		app:layout_constraintEnd_toStartOf="@+id/guideline_end"
 		app:layout_constraintStart_toStartOf="@+id/guideline_c_start"
-		app:layout_constraintTop_toTopOf="@+id/guideline_horizonal_c_top"
+		app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_c_top"
 		app:layout_constraintVertical_bias="0.0" />
 	
 	<androidx.appcompat.widget.AppCompatButton
@@ -121,7 +121,7 @@
 		android:layout_height="0dp"
 		android:text="@string/_equals"
 		android:textSize="@dimen/button_text_size"
-		app:layout_constraintBottom_toTopOf="@+id/guideline_horizonal_bottom"
+		app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_bottom"
 		app:layout_constraintEnd_toStartOf="@+id/guideline_buttons_end"
 		app:layout_constraintStart_toEndOf="@+id/buttonDot"
 		app:layout_constraintTop_toBottomOf="@+id/buttonNine" />
@@ -155,7 +155,7 @@
 		android:layout_height="0dp"
 		android:text="@string/_dot"
 		android:textSize="@dimen/button_text_size"
-		app:layout_constraintBottom_toTopOf="@+id/guideline_horizonal_bottom"
+		app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_bottom"
 		app:layout_constraintEnd_toStartOf="@+id/buttonEquals"
 		app:layout_constraintStart_toEndOf="@+id/buttonZero"
 		app:layout_constraintTop_toBottomOf="@+id/buttonEight" />
@@ -169,7 +169,7 @@
 		app:layout_constraintBottom_toTopOf="@+id/buttonFour"
 		app:layout_constraintEnd_toStartOf="@+id/buttonTwo"
 		app:layout_constraintStart_toStartOf="@+id/guideline_start"
-		app:layout_constraintTop_toTopOf="@+id/guideline_horizonal_buttons_top" />
+		app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_buttons_top" />
 	
 	<androidx.appcompat.widget.AppCompatButton
 		android:id="@+id/buttonTwo"
@@ -180,7 +180,7 @@
 		app:layout_constraintBottom_toTopOf="@+id/buttonFive"
 		app:layout_constraintEnd_toStartOf="@+id/buttonThree"
 		app:layout_constraintStart_toEndOf="@+id/buttonOne"
-		app:layout_constraintTop_toTopOf="@+id/guideline_horizonal_buttons_top" />
+		app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_buttons_top" />
 	
 	<androidx.appcompat.widget.AppCompatButton
 		android:id="@+id/buttonFour"
@@ -199,7 +199,7 @@
 		android:layout_height="0dp"
 		android:text="@string/_0"
 		android:textSize="@dimen/button_text_size"
-		app:layout_constraintBottom_toTopOf="@+id/guideline_horizonal_bottom"
+		app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_bottom"
 		app:layout_constraintEnd_toStartOf="@+id/buttonDot"
 		app:layout_constraintStart_toStartOf="@+id/guideline_start"
 		app:layout_constraintTop_toBottomOf="@+id/buttonSeven" />
@@ -232,7 +232,7 @@
 		android:layout_height="0dp"
 		android:text="@string/_divide"
 		android:textSize="@dimen/button_text_size"
-		app:layout_constraintBottom_toTopOf="@+id/guideline_horizonal_bottom"
+		app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_bottom"
 		app:layout_constraintEnd_toStartOf="@+id/guideline_end"
 		app:layout_constraintStart_toStartOf="@+id/guideline_c_start"
 		app:layout_constraintTop_toBottomOf="@+id/buttonMultiply"
@@ -281,7 +281,7 @@
 		app:layout_constraintBottom_toTopOf="@+id/buttonSix"
 		app:layout_constraintEnd_toStartOf="@+id/guideline_buttons_end"
 		app:layout_constraintStart_toEndOf="@+id/buttonTwo"
-		app:layout_constraintTop_toTopOf="@+id/guideline_horizonal_buttons_top" />
+		app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_buttons_top" />
 	
 	<androidx.appcompat.widget.AppCompatButton
 		android:id="@+id/buttonPlus"
@@ -292,6 +292,6 @@
 		app:layout_constraintBottom_toTopOf="@+id/buttonMinus"
 		app:layout_constraintEnd_toStartOf="@+id/guideline_end"
 		app:layout_constraintStart_toStartOf="@+id/guideline_c_start"
-		app:layout_constraintTop_toTopOf="@+id/guideline_horizonal_buttons_top" />
+		app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_buttons_top" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

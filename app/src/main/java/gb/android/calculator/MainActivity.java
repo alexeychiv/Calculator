@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView display;
     private Calculator calculator;
-    private String KEY_CALCULATOR = "calc";
+    private final String KEY_CALCULATOR = "calc";
 
 
     @Override
