@@ -5,36 +5,35 @@ import android.os.Parcelable;
 
 public class Calculator implements Parcelable {
 
-    private int     displaySize = 15;
-    private String  display;
+    private int displaySize = 15;
+    private String display;
 
     private boolean isDot;
     private boolean isNumber1Long;
     private boolean isNumber2Long;
 
-    private long    number1_long;
-    private long    number2_long;
-    private double  number1_double;
-    private double  number2_double;
+    private long number1_long;
+    private long number2_long;
+    private double number1_double;
+    private double number2_double;
 
-    enum State
-    {
+    enum State {
         INIT,
         NUMBER1,
         ACTION,
         NUMBER2,
         EQUALS
-    };
+    }
+
     private State state;
 
-    enum Action
-    {
+    enum Action {
         NONE,
         PLUS,
         MINUS,
         MULTIPLY,
         DIVIDE,
-    };
+    }
 
     private Action action;
 
@@ -42,8 +41,7 @@ public class Calculator implements Parcelable {
     //====================================================================================================================
     //  CONSTRUCTOR
 
-    public Calculator()
-    {
+    public Calculator() {
         clear();
     }
 
@@ -51,13 +49,13 @@ public class Calculator implements Parcelable {
     //  PARCELABLE
 
     protected Calculator(Parcel in) {
-        displaySize    = in.readInt();
-        display        = in.readString();
-        isDot          = in.readByte() != 0;
-        isNumber1Long  = in.readByte() != 0;
-        isNumber2Long  = in.readByte() != 0;
-        number1_long   = in.readLong();
-        number2_long   = in.readLong();
+        displaySize = in.readInt();
+        display = in.readString();
+        isDot = in.readByte() != 0;
+        isNumber1Long = in.readByte() != 0;
+        isNumber2Long = in.readByte() != 0;
+        number1_long = in.readLong();
+        number2_long = in.readLong();
         number1_double = in.readDouble();
         number2_double = in.readDouble();
     }
@@ -96,28 +94,23 @@ public class Calculator implements Parcelable {
     //====================================================================================================================
     //  UTILS
 
-    private void parseNumber1()
-    {
+    private void parseNumber1() {
         if (isNumber1Long)
             number1_long = Long.parseLong(display);
         else
             number1_double = Double.parseDouble(display);
     }
 
-    private void parseNumber2()
-    {
+    private void parseNumber2() {
         if (isNumber2Long)
             number2_long = Long.parseLong(display);
         else
             number2_double = Double.parseDouble(display);
     }
 
-    private void calculate()
-    {
-        if (isNumber1Long && isNumber2Long)
-        {
-            switch (action)
-            {
+    private void calculate() {
+        if (isNumber1Long && isNumber2Long) {
+            switch (action) {
                 case PLUS:
                     number1_long += number2_long;
                     return;
@@ -127,28 +120,20 @@ public class Calculator implements Parcelable {
                 case MULTIPLY:
                     number1_long *= number2_long;
                     return;
-                case DIVIDE:
-                {
-                    if (((double)number1_long / number2_long) > (number1_long / number2_long))
-                    {
+                case DIVIDE: {
+                    if (number1_long % number2_long > 0) {
                         isNumber1Long = false;
-                        number1_double = (double)number1_long / number2_long;
-                    }
-                    else
-                    {
-                        isNumber1Long = true;
+                        number1_double = (double) number1_long / number2_long;
+                    } else {
                         number1_long = number1_long / number2_long;
                     }
                 }
             }
-        }
-        else
-        {
-            double result   = isNumber1Long? number1_long : number1_double;
-            double num2     = isNumber2Long? number2_long : number2_double;
+        } else {
+            double result = isNumber1Long ? number1_long : number1_double;
+            double num2 = isNumber2Long ? number2_long : number2_double;
 
-            switch (action)
-            {
+            switch (action) {
                 case PLUS:
                     result += num2;
                     break;
@@ -163,14 +148,11 @@ public class Calculator implements Parcelable {
                     break;
             }
 
-            if (result == (long)result)
-            {
+            if (result == (long) result) {
                 isNumber1Long = true;
-                number1_long  = (long)result;
-            }
-            else
-            {
-                isNumber1Long  = false;
+                number1_long = (long) result;
+            } else {
+                isNumber1Long = false;
                 number1_double = result;
             }
         }
@@ -180,47 +162,43 @@ public class Calculator implements Parcelable {
     //  INTERFACE
 
 
-    public String getDisplay() { return display; }
-
-    public void clear()
-    {
-        display             = "0";
-
-        isDot               = false;
-        isNumber1Long       = true;
-        isNumber2Long       = true;
-
-        number1_long        = 0;
-
-        state               = State.INIT;
-
-        action              = Action.NONE;
+    public String getDisplay() {
+        return display;
     }
 
-    public void addDigit(char digit)
-    {
-        switch (state)
-        {
+    public void clear() {
+        display = "0";
+
+        isDot = false;
+        isNumber1Long = true;
+        isNumber2Long = true;
+
+        number1_long = 0;
+
+        state = State.INIT;
+
+        action = Action.NONE;
+    }
+
+    public void addDigit(char digit) {
+        switch (state) {
             case INIT:
-            case EQUALS:
-            {
+            case EQUALS: {
                 clear();
 
-                state   = State.NUMBER1;
+                state = State.NUMBER1;
                 display = Character.toString(digit);
 
                 return;
             }
 
-            case NUMBER1:
-            {
-                if (display.length() == displaySize + (isDot?1:0))
+            case NUMBER1: {
+                if (display.length() == displaySize + (isDot ? 1 : 0))
                     return;
 
-                if (isNumber1Long && isDot)
-                {
-                    display       += ".";
-                    isNumber1Long  = false;
+                if (isNumber1Long && isDot) {
+                    display += ".";
+                    isNumber1Long = false;
                 }
 
                 display += digit;
@@ -228,28 +206,23 @@ public class Calculator implements Parcelable {
                 return;
             }
 
-            case ACTION:
-            {
+            case ACTION: {
                 state = State.NUMBER2;
 
-                if (isNumber2Long && isDot)
-                {
+                if (isNumber2Long && isDot) {
                     isNumber2Long = false;
-                    display       = "0." + digit;
-                }
-                else
+                    display = "0." + digit;
+                } else
                     display = Character.toString(digit);
 
                 return;
             }
 
-            case NUMBER2:
-            {
-                if (display.length() == displaySize + (isDot?1:0))
+            case NUMBER2: {
+                if (display.length() == displaySize + (isDot ? 1 : 0))
                     return;
 
-                if (isNumber2Long && isDot)
-                {
+                if (isNumber2Long && isDot) {
                     display += ".";
                     isNumber2Long = false;
                 }
@@ -261,28 +234,24 @@ public class Calculator implements Parcelable {
         }
     }
 
-    public void addDot()
-    {
+    public void addDot() {
         if (isDot)
             return;
 
-        switch (state)
-        {
+        switch (state) {
             case INIT:
-            case EQUALS:
-            {
+            case EQUALS: {
                 clear();
 
-                isDot   = true;
-                state   = State.NUMBER1;
+                isDot = true;
+                state = State.NUMBER1;
                 display = "0.";
 
                 return;
             }
 
             case NUMBER1:
-            case NUMBER2:
-            {
+            case NUMBER2: {
                 if (display.length() == displaySize)
                     return;
 
@@ -291,8 +260,7 @@ public class Calculator implements Parcelable {
                 return;
             }
 
-            case ACTION:
-            {
+            case ACTION: {
                 isDot = true;
 
                 return;
@@ -300,35 +268,30 @@ public class Calculator implements Parcelable {
         }
     }
 
-    public void setAction(Action action)
-    {
-        switch (state)
-        {
+    public void setAction(Action action) {
+        switch (state) {
             case ACTION:
                 this.action = action;
-                isDot       = false;
+                isDot = false;
             case INIT:
-            case EQUALS:
-            {
+            case EQUALS: {
                 state = State.ACTION;
 
                 return;
             }
 
-            case NUMBER1:
-            {
+            case NUMBER1: {
                 parseNumber1();
 
-                state         = State.ACTION;
-                this.action   = action;
-                isDot         = false;
+                state = State.ACTION;
+                this.action = action;
+                isDot = false;
                 isNumber2Long = true;
 
                 return;
             }
 
-            case NUMBER2:
-            {
+            case NUMBER2: {
                 parseNumber2();
 
                 calculate();
@@ -341,10 +304,8 @@ public class Calculator implements Parcelable {
         }
     }
 
-    public void actionEquals()
-    {
-        switch (state)
-        {
+    public void actionEquals() {
+        switch (state) {
             case INIT:
             case NUMBER1:
                 isDot = false;
@@ -356,8 +317,7 @@ public class Calculator implements Parcelable {
                 isDot = false;
                 parseNumber2();
                 state = State.EQUALS;
-            case EQUALS:
-            {
+            case EQUALS: {
                 calculate();
 
                 if (isNumber1Long)
