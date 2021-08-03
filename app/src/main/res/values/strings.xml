@@ -17,4 +17,9 @@
 	<string name="_divide">/</string>
 	<string name="_equals">=</string>
 	<string name="_clear">C</string>
+	<string name="themesButton_text">themes</string>
+	<string name="theme_one">Theme 1</string>
+	<string name="theme_two">Theme 2</string>
+	<string name="theme_three">Theme 3</string>
+	<string name="done">done</string>
 </resources>

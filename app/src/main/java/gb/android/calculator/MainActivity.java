@@ -1,5 +1,6 @@
 package gb.android.calculator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -9,14 +10,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
     private TextView display;
     private Calculator calculator;
     private final String KEY_CALCULATOR = "calc";
 
+    private final String KEY_SP = "theme";
+    private final String KEY_CURRENT_THEME = "cur_theme";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(getCurrentThemeId());
         setContentView(R.layout.activity_main);
 
         display = findViewById(R.id.display);
@@ -26,6 +31,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         calculator = new Calculator();
 
         display.setText(calculator.getDisplay());
+    }
+
+    @Override
+    protected void onRestart()
+    {
+        super.onRestart();
+
+        recreate();
+    }
+
+    private int getCurrentThemeId() {
+        switch (getSharedPreferences(KEY_SP, MODE_PRIVATE).getInt(KEY_CURRENT_THEME, -1)) {
+            case 1:
+                return R.style.Theme1;
+            case 2:
+                return R.style.Theme2;
+            case 3:
+                return R.style.Theme3;
+        }
+
+        return R.style.Theme1;
     }
 
     @Override
@@ -43,6 +69,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private void setOnClickListeners() {
+        findViewById(R.id.buttonThemes).setOnClickListener(this);
+
         findViewById(R.id.buttonClear).setOnClickListener(this);
 
         findViewById(R.id.buttonOne).setOnClickListener(this);
@@ -68,6 +96,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
+            case R.id.buttonThemes:
+                startActivity(new Intent(this, ThemesActivity.class));
+                break;
             case R.id.buttonClear:
                 calculator.clear();
                 break;

@@ -6,6 +6,60 @@
 	android:layout_height="match_parent"
 	tools:context=".MainActivity">
 	
+	<com.google.android.material.appbar.AppBarLayout
+		android:layout_width="0dp"
+		android:layout_height="0dp"
+		app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_toolbar_bottom"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent">
+		
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+			
+			
+			<androidx.constraintlayout.widget.Guideline
+				android:id="@+id/guideline_appHeaderEnd"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				app:layout_constraintGuide_percent="0.67" />
+			
+			<androidx.constraintlayout.widget.Guideline
+				android:id="@+id/guideline_buttonThemes_start"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				app:layout_constraintGuide_percent="0.7" />
+			
+			
+			<TextView
+				android:id="@+id/appHeader"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/app_name"
+				android:textSize="@dimen/header_textSize"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toStartOf="@+id/guideline_appHeaderEnd"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent" />
+			
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/buttonThemes"
+				style="@style/CalculatorButton"
+				android:text="@string/themesButton_text"
+				android:textSize="@dimen/themesButton_textSize"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="@+id/guideline_buttonThemes_start"
+				app:layout_constraintTop_toTopOf="parent" />
+		
+		
+		</androidx.constraintlayout.widget.ConstraintLayout>
+	
+	
+	</com.google.android.material.appbar.AppBarLayout>
 	
 	<androidx.appcompat.widget.AppCompatImageView
 		android:layout_width="wrap_content"
@@ -20,46 +74,53 @@
 	
 	
 	<androidx.constraintlayout.widget.Guideline
-		android:id="@+id/guideline_horizontal_top"
+		android:id="@+id/guideline_horizontal_toolbar_bottom"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
 		app:layout_constraintGuide_percent="0.1" />
 	
 	<androidx.constraintlayout.widget.Guideline
+		android:id="@+id/guideline_horizontal_top"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		app:layout_constraintGuide_percent="0.15" />
+	
+	<androidx.constraintlayout.widget.Guideline
 		android:id="@+id/guideline_horizontal_display_bottom"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
-		app:layout_constraintGuide_percent="0.2" />
+		app:layout_constraintGuide_percent="0.23" />
 	
 	<androidx.constraintlayout.widget.Guideline
 		android:id="@+id/guideline_horizontal_c_bottom"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
-		app:layout_constraintGuide_percent="0.32" />
+		app:layout_constraintGuide_percent="0.34" />
 	
 	<androidx.constraintlayout.widget.Guideline
 		android:id="@+id/guideline_horizontal_buttons_top"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
-		app:layout_constraintGuide_percent="0.34" />
+		app:layout_constraintGuide_percent="0.37" />
 	
 	<androidx.constraintlayout.widget.Guideline
 		android:id="@+id/guideline_horizontal_c_top"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
-		app:layout_constraintGuide_percent="0.22" />
+		app:layout_constraintGuide_percent="0.26" />
 	
 	<androidx.constraintlayout.widget.Guideline
 		android:id="@+id/guideline_horizontal_bottom"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal"
-		app:layout_constraintGuide_percent="0.75" />
+		app:layout_constraintGuide_percent="0.7" />
 	
 	
 	<androidx.constraintlayout.widget.Guideline
