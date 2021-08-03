@@ -24,16 +24,15 @@ public class ThemesActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private void setCurrentRadio() {
-        switch (currentTheme)
-        {
+        switch (currentTheme) {
             case 1:
-                ((RadioButton)findViewById(R.id.radio_theme_one)).setChecked(true);
+                ((RadioButton) findViewById(R.id.radio_theme_one)).setChecked(true);
                 break;
             case 2:
-                ((RadioButton)findViewById(R.id.radio_theme_two)).setChecked(true);
+                ((RadioButton) findViewById(R.id.radio_theme_two)).setChecked(true);
                 break;
             case 3:
-                ((RadioButton)findViewById(R.id.radio_theme_three)).setChecked(true);
+                ((RadioButton) findViewById(R.id.radio_theme_three)).setChecked(true);
                 break;
         }
     }
@@ -46,12 +45,10 @@ public class ThemesActivity extends AppCompatActivity implements View.OnClickLis
         findViewById(R.id.radio_theme_three).setOnClickListener(this);
     }
 
-    private int getCurrentThemeId()
-    {
+    private int getCurrentThemeId() {
         currentTheme = getSharedPreferences(KEY_SP, MODE_PRIVATE).getInt(KEY_CURRENT_THEME, -1);
 
-        switch (currentTheme)
-        {
+        switch (currentTheme) {
             case 1:
                 return R.style.Theme1;
             case 2:

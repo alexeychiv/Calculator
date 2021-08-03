@@ -24,19 +24,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setTheme(getCurrentThemeId());
         setContentView(R.layout.activity_main);
 
-        display = findViewById(R.id.display);
-
-        setOnClickListeners();
-
-        calculator = new Calculator();
+        init();
 
         display.setText(calculator.getDisplay());
 
         receiveIntentMessage();
     }
 
-    private void receiveIntentMessage()
-    {
+    public void init() {
+        display = findViewById(R.id.display);
+        setOnClickListeners();
+        calculator = new Calculator();
+    }
+
+    private void receiveIntentMessage() {
         Bundle bundle = getIntent().getExtras();
 
         if (bundle == null)
@@ -48,8 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    protected void onRestart()
-    {
+    protected void onRestart() {
         super.onRestart();
 
         recreate();
