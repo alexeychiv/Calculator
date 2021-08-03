@@ -31,6 +31,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         calculator = new Calculator();
 
         display.setText(calculator.getDisplay());
+
+        receiveIntentMessage();
+    }
+
+    private void receiveIntentMessage()
+    {
+        Bundle bundle = getIntent().getExtras();
+
+        if (bundle == null)
+            return;
+
+        String message = bundle.getString(Intent.EXTRA_TEXT);
+
+        display.setText(message);
     }
 
     @Override
